@@ -1,0 +1,26 @@
+{
+  "name": "gadget-bar",
+  "version": "1.0.0",
+  "description": "internet-shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KPACHb1Y/Gadget-bar.git"
+  },
+  "keywords": [
+    "javascript",
+    "html"
+  ],
+  "author": "Игорь Мирошкин",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KPACHb1Y/Gadget-bar/issues"
+  },
+  "homepage": "https://github.com/KPACHb1Y/Gadget-bar#readme",
+  "dependencies": {
+    "swiper": "^6.8.1"
+  }
+}
