@@ -1,0 +1,568 @@
+.install
+    margin-top: 70px
+    display: flex
+    width: 100%
+    justify-content: space-between
+    &__block
+        // max-width: 49%
+        width: 688px
+        height: 350px
+        background: linear-gradient(135deg, #51777C 0%, #C4D5C4 100%)
+        border-radius: 15px
+        padding-left: 30px
+        padding-top: 50px
+        padding-bottom: 200px
+        position: relative
+        overflow: hidden
+        // &::before
+        //     position: absolute
+        //     content: url('../img/block-1.png')
+        //     right: 110px
+        //     // right: 0
+        //     // left: 20%
+        //     bottom: 0
+        //     // transform: translateX(110px)
+        //     max-width: 60%
+        //     max-height: 100%
+        &--bg
+            background: #F9E6D9
+            margin-left: 32px
+            &::after
+                position: absolute
+                content: ''
+                width: 594px
+                border-radius: 50%
+                height: 594px
+                left: 40%
+                top: 0px
+                background: rgba(255, 255, 255, 0.4)
+                z-index: 0
+    &__img
+        position: absolute 
+        right: 20px
+        bottom: 0
+        z-index: 1
+               
+    &__toptitle
+        font-weight: bold
+        font-size: 20px
+        line-height: 30px
+        color: #FFFFFF
+        position: relative
+        z-index: 2        
+    &__title
+        margin-top: 15px
+        display: inline-block
+        background: #F9E6D9
+        border-radius: 5px
+        font-weight: bold
+        font-size: 31px
+        line-height: 1
+        text-transform: uppercase
+        color: #52606D
+        padding: 10px 30px
+        position: relative
+        z-index: 2
+        &--sell
+            text-transform: none
+            color: #fff
+            background: #51777C
+    &__subtitle
+            font-weight: bold
+            font-size: 24px
+            line-height: 1
+            color: #3E4C59
+            margin-top: 25px
+            z-index: 2
+            position: relative
+.popular
+    margin-top: 70px
+    &__title
+        font-weight: bold
+        font-size: 22px
+        line-height: 1.5
+        display: inline-block
+        margin-right: 20px
+        a
+            color: #1F2933
+            text-decoration: none
+    &__subtitle
+        font-size: 14px
+        line-height: 1.5
+        display: inline-block
+        a
+            text-decoration: none
+            color: #9BBABD
+    .swiper-button-prev, .swiper-button-next
+        width: 36px
+        height: 36px
+        background: #E4E7EB
+        border-radius: 3.75px
+        left: auto
+        
+        top: 25px
+        z-index: 100
+        // position: relative
+        &::after
+            font-size: 10px
+        .swiper-button-next
+            right: 0px
+        .swiper-button-prev
+            left: 0
+            right: 40px
+
+    
+    .item
+        margin-top: 30px
+        padding: 20px 28px
+        width: 256px
+        height: 456px
+        border: 1px solid #E4E7EB
+        box-sizing: border-box
+        border-radius: 15px
+        &__headers
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__header
+            font-weight: 500
+            font-size: 10px
+            color: #FFFFFF
+            text-decoration: none
+            padding: 5px 10px
+            border-radius: 3px
+            margin-right: 10px
+            // position: relative
+            &--sell
+                background: #DE7A89
+            &--popular
+                background: #BBDE7A
+            &--trand
+                background: #7ADECF
+            &--new
+                background: #7B86DD
+
+        &__like
+            
+            // position: absolute
+            svg
+                width: 20px
+                height: 18px
+                fill: #fff
+                stroke: #000
+                &:hover
+                    fill: red
+                    stroke: red
+
+        &__img
+            margin-top: 15px
+            max-width: 150px
+            max-height: 150px
+            overflow: hidden
+            transform: scale(1)
+            transition: transform 0.3s
+            &:hover
+                transform: scale(1.1)
+        &__type
+            margin-top: 15px
+            font-weight: 500
+            font-size: 10px
+            line-height: 15px
+            a
+                text-decoration: none
+                color: #9AA5B1
+        &__product
+            font-weight: 600
+            font-size: 14px
+            line-height: 21px
+            height: 42px
+            a
+                text-decoration: none
+                color: #1F2933
+        &__availability
+            display: inline-flex
+            font-weight: 500
+            font-size: 10px
+            line-height: 1.5
+            color: #9AA5B1
+            align-items: center
+            svg
+                width: 17px
+                height: 17px
+                margin-right: 7px
+        &__price
+            margin-top: 12px
+        &__new-price
+            font-weight: bold
+            font-size: 18px
+            line-height: 1.5
+            color: #52606D
+        &__old-price
+            font-weight: 500
+            font-size: 10px
+            line-height: 1.5
+            min-height: 15px
+            // display: flex
+            // align-items: center
+            text-decoration-line: line-through
+        &__basket
+            cursor: pointer
+            margin-top: 34px
+            display: flex
+            // margin: auto
+            background-color: #E4E7EB
+            border-radius: 5px
+            width: 200px
+            height: 48px
+            padding: 0 45px
+            outline: none
+            position: relative
+            // background: #DE7ABB
+            background: rgb(222,122,187)
+            background: linear-gradient(90deg, rgba(222,122,187,1) 10%, rgba(187,222,122,1) 100%)
+            background-position: 0 0
+            background-size: 600%
+            border-radius: 5px
+            border: none
+            transition: background-position 0.4s linear
+            font-weight: 600
+            font-size: 14px
+            line-height: 1.5
+            color: #FFFFFF
+            // &::after
+            //     position: absolute
+            //     content: ''
+            //     display: block
+            //     transition: all 0.3s ease
+            //     left: 0
+            //     right: 0
+            //     top: 0
+            //     bottom: 0
+            //     background-color: red
+            //     padding: 0.85em 0.75em
+            //     // z-index: -1
+            //     transform: scale(0, 0) rotate(-180deg)
+            &:hover
+                background-position: 100% 0
+                // &::after
+                //     transform: scale(1, 1) rotate(0deg)
+            svg
+                width: 21px
+                height: 21px
+                // display: inline-flex
+                margin: auto
+                position: relative
+                z-index: 1
+                fill: #fff
+            span
+                margin: auto
+                position: relative
+                z-index: 1
+$var1: #cccccc
+$var2: #fbfbfb
+$var3: #999999
+$var4: #ffffff
+$var5: #000000
+
+#tabs 
+	margin: 10px 0
+
+.tabs-nav 
+	display: table
+	margin: 0
+	padding: 0
+	width: 100%
+	li 
+		display: table-cell
+		float: none
+		margin: 0
+		padding: 0
+		&:first-child a 
+			border-radius: 5px 0 0 0
+		
+		&:last-child a 
+			display: block
+			border-right: 1px solid $var1
+			border-radius: 0 5px 0 0
+		
+	
+	a 
+		display: block
+		padding: 10px 20px
+		border-top: 1px solid $var1
+		border-bottom: 1px solid $var1
+		border-left: 1px solid $var1
+		background: $var2
+		font-size: 16px
+		text-decoration: none
+		text-align: center
+		color: $var3
+		&.active 
+			border-bottom: 1px solid $var4
+			background: $var4
+			color: $var5
+		
+	
+
+// .tabs-items 
+// 	border: 1px solid $var1
+// 	border-top: none
+// 	border-radius: 0 0 5px 5px
+// 	background: $var4
+
+// .tabs-item 
+// 	padding: 15px
+
+// #map2
+//     width: 100%
+
+.map-popup 
+    background: #ffffff
+    // border-radius: 5px
+    padding: 18px
+    // width: 300px
+    padding: 20px
+    color: #000
+    box-sizing: border-box
+    h2
+        padding-left: 26px
+        font-weight: 500
+        font-size: 10px
+        line-height: 15px
+        display: block
+        background-size: 18px 16px
+        
+        background-position: 0 0
+        
+
+#map-1
+    // margin-top: 30px
+    border-radius: 15px
+
+.map
+    &-icon 
+        visibility: visible!important /* Оставляем иконку видимой при открытии попапа */
+        display: inline!important
+    &-adress
+        background: url("../../img/map-adress.svg") no-repeat center/cover
+    &-time
+        margin-top: 18px
+        background: url("../../img/map-time.svg") no-repeat center/cover
+    &-tel
+        margin-top: 18px
+        background: url("../../img/map-tel.svg") no-repeat center/cover
+        
+
+.leaflet-popup-tip-container 
+    display: none !important /* Убираем родной указатель при открытом попапе */
+
+.leaflet-popup-content 
+    margin: 0 !important   /* Убираем отступы у попапа */
+
+.adress
+    margin-top: 70px
+    &__title
+        font-weight: bold
+        font-size: 22px
+        line-height: 1.5
+        color: #1F2933
+        display: inline-block
+        margin-right: 20px
+    &__subtitle
+        font-size: 14px
+        line-height: 1.5
+        color: #9BBABD
+        display: inline-block
+    &__item
+        margin: 30px 30px 30px 0
+        font-weight: 600
+        font-size: 14px
+        line-height: 1.5
+        color: #9AA5B1
+        padding: 13px 20px
+        // background: #E4E7EB
+        background: rgb(228,231,235)
+        background: linear-gradient(90deg, rgba(228,231,235,1) 10%, rgba(81,119,124,1) 100%)
+        background-position: 0 0
+        background-size: 600%
+        border-radius: 5px
+        display: inline-block
+        transition: background-position 0.6s, color 0.6s
+        cursor: pointer
+        &:last-child
+            margin-top: 0
+        svg
+            display: inline-block
+            width: 22px
+            height: 20px
+            vertical-align: middle
+        &:hover, &:active
+            color: #fff
+            // background: #51777C
+            border-radius: 5px
+            background-position: 100% 0
+            svg
+                stroke: #fff
+
+.footer
+    background: #3E4C59
+    margin-top: 100px
+    color: #FFFFFF
+    padding-top: 59px
+    &__column
+        display: inline-block
+        vertical-align: top
+        margin-right: 54px
+
+    a
+        color: #FFFFFF
+    
+    &__logo
+        max-width: 256px
+        max-height: 45px
+        margin: 0
+
+    &__tel
+        margin-top: 50px
+        display: flex
+        flex-direction: column
+    &__numder
+        font-weight: 600
+        text-decoration: none
+        display: flex
+        
+        
+        svg
+            align-items: center
+            width: 14px
+            height: 20px
+            margin-right: 15px
+    &__call
+        text-decoration: underline
+        margin-left: 29px
+        margin-top: 5px
+        &:hover
+            text-decoration: none
+    &__ip
+        margin-top: 20px
+        display: flex
+        svg
+            align-items: center
+            margin-right: 9px
+            width: 20px
+            height: 20px
+    &__inn, &__ogrn
+        margin-top: 5px
+        margin-left: 29px
+        b
+            font-weight: 600
+    &__ogrn
+        margin-bottom: 68px
+    &__list
+        list-style: none
+        li
+            margin-top: 10px
+            a
+                text-decoration: none
+                &:hover
+                    text-decoration: underline
+        b
+            position: relative
+            padding-bottom: 10px
+            display: block
+            &::before
+                position: absolute
+                content: ''
+                width: 50px
+                height: 2px
+                background: #DE7A89
+                bottom: 0px
+                left: 0
+    .subscribe
+        margin-top: 23px
+        width: 448px
+        // height: 40px
+        // padding: 13px 60px 13px 20px
+        border: 1px solid #7B8794
+        border-radius: 5px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        // padding: 2px
+        &__area 
+            // width: 80px
+            height: 36px
+            background: #7B86DD
+            // border-radius: 0px 5px 5px 0px
+            color: #fff
+            font-size: 14px
+            padding: 13px 20px
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            &:hover
+                background: #5466eb
+        input 
+            border: none
+            background: none
+            width: calc(100% - 84px)
+            height: 100%
+            text-indent: 10px
+            color: #fff
+            &::placeholder
+                color: #7B8794
+                font-weight: normal
+                font-size: 14px
+                line-height: 21px
+        &__title
+            // margin-top: 45px
+            font-weight: 600
+            font-size: 14px
+        &__subtitle
+            color: #7B8794
+            font-weight: 500
+            font-size: 10px
+            line-height: 1.5
+            max-width: 448px
+            margin-top: 15px
+        &__social
+            padding-top: 23px
+            display: flex
+            justify-content: space-between
+            max-width: 50%
+            a
+                // margin-right: 23px
+        &__pay
+            margin-top: 42px
+            display: flex
+            justify-content: space-between
+            a
+                display: inline-block
+                text-align: center
+                svg
+                    max-width: 71px
+                    max-height: 24px
+    
+
+
+                
+             
+            
+            
+
+
+
+
+            
+                
+                
+
+
+        
+
+                
+
+        
+
+
