@@ -481,7 +481,7 @@ body {
     line-height: 30px;
     margin: 0 20px 0 0;
 }
-.slider-block__cart-product span {
+.slider-block__cart-product .popular-product {
     width: 86px;
     height: 25px;
     background: #BBDE7A;
@@ -492,6 +492,7 @@ body {
     color: #fff;
     display: flex;
     margin-right: 170px;
+    text-decoration: none;
 }
 .slider-block__cart-desc {
     display: flex;
@@ -1073,6 +1074,10 @@ img {
   color: #9BBABD;
   display: inline-block;
 }
+.adress__items {
+    display: flex;
+    align-items: center;
+}
 
 .adress__item {
   text-decoration: none;
@@ -1095,7 +1100,7 @@ img {
 }
 
 .adress__item:last-child {
-  margin-top: 0;
+  /*margin-top: 0;*/
 }
 
 .adress__item svg {
