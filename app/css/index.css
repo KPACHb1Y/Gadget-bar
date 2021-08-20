@@ -157,20 +157,18 @@ body {
     line-height: 21px;
 }
 .modal-callback {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 1050;
-    -webkit-transition: opacity 200ms ease-in;
-    -moz-transition: opacity 200ms ease-in;
-    transition: opacity 200ms ease-in;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
     pointer-events: none;
-    margin: 0;
-    padding: 0;
     justify-content: center;
     align-items: center;
 }
@@ -270,6 +268,9 @@ body {
     background: #51777C;
     border-radius: 5px;
 }
+.catalog-btn .btn-menu-cross {
+    display: none;
+}
 .catalog-menu {
     display: none;
     width: 263px;
@@ -352,7 +353,6 @@ body {
     font-size: 14px;
     font-weight: 600;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 56px;
     padding: 8px 10px;

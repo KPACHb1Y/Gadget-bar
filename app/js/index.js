@@ -9,6 +9,8 @@ const body = document.querySelector('body')
 
 const catalogBtn = document.querySelector('.catalog-btn')
 const catalogMenu = document.querySelector('.catalog-menu')
+const btnMenuCross = document.querySelector('.btn-menu-cross')
+const btnMenu = document.querySelector('.btn-menu')
 const catalogBtnLists = document.querySelectorAll('.catalog-menu ul li')
 const subCatalogMenu = document.querySelector('.sub-catalog-menu')
 
@@ -19,10 +21,12 @@ function toggleActiveModal(modal) {
 
 chooseCity.addEventListener('click', () => {
     toggleActiveModal(modalCity)
+    modalAddress.classList.remove('active')
 })
 
 chooseAddress.addEventListener('click', () => {
     toggleActiveModal(modalAddress)
+    modalCity.classList.remove('active')
 })
 
 callLink.addEventListener('click', () => {
@@ -32,6 +36,12 @@ callLink.addEventListener('click', () => {
 
 catalogBtn.addEventListener('click', () => {
     catalogMenu.classList.toggle('active')
+    btnMenuCross.classList.toggle('active')
+    if (btnMenuCross.classList.contains('active')) {
+        btnMenu.style.display = 'none'
+    } else {
+        btnMenu.style.display = 'flex'
+    }
 })
 
 catalogBtnLists.forEach(item => {
