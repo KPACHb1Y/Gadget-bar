@@ -4,8 +4,10 @@
     width: 100%
     justify-content: space-between
     &__block
+        text-decoration: none
         // max-width: 49%
         width: 688px
+        max-width: 100%
         height: 350px
         background: linear-gradient(135deg, #51777C 0%, #C4D5C4 100%)
         border-radius: 15px
@@ -105,21 +107,31 @@
         // position: relative
         &::after
             font-size: 10px
-        .swiper-button-next
-            right: 0px
-        .swiper-button-prev
-            left: 0
-            right: 40px
+    .swiper-button-next
+        right: 0px
+    .swiper-button-prev
+        right: 40px
+    // .swiper-container
+    //     padding: 0 13px
+    .swiper-wrapper
+        // padding: 0 13px 24px 13px
+        padding-bottom: 24px
 
     
     .item
         margin-top: 30px
-        padding: 20px 28px
+        padding: 20px 20px
         width: 256px
         height: 456px
         border: 1px solid #E4E7EB
         box-sizing: border-box
         border-radius: 15px
+        transition: box-shadow 0.5s
+        position: relative
+        // z-index: 1000
+        // // box-shadow: 0
+        &:hover
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15)
         &__headers
             display: flex
             justify-content: space-between
@@ -129,9 +141,9 @@
             font-size: 10px
             color: #FFFFFF
             text-decoration: none
-            padding: 5px 10px
+            padding: 5px 5px
             border-radius: 3px
-            margin-right: 10px
+            // margin-right: 10px
             // position: relative
             &--sell
                 background: #DE7A89
@@ -207,45 +219,57 @@
             text-decoration-line: line-through
         &__basket
             cursor: pointer
-            margin-top: 34px
             display: flex
-            // margin: auto
-            background-color: #E4E7EB
+            margin: 0 auto
+            margin-top: 34px
+            // background-color: #E4E7EB
             border-radius: 5px
-            width: 200px
+            max-width: 200px
             height: 48px
-            padding: 0 45px
+            padding: 0 40px
             outline: none
             position: relative
-            // background: #DE7ABB
-            background: rgb(222,122,187)
-            background: linear-gradient(90deg, rgba(222,122,187,1) 10%, rgba(187,222,122,1) 100%)
-            background-position: 0 0
-            background-size: 600%
-            border-radius: 5px
+            background: #DE7ABB
             border: none
-            transition: background-position 0.4s linear
+            border-radius: 5px
+            border-color: #DE7ABB 
             font-weight: 600
             font-size: 14px
             line-height: 1.5
             color: #FFFFFF
-            // &::after
-            //     position: absolute
-            //     content: ''
-            //     display: block
-            //     transition: all 0.3s ease
-            //     left: 0
-            //     right: 0
-            //     top: 0
-            //     bottom: 0
-            //     background-color: red
-            //     padding: 0.85em 0.75em
-            //     // z-index: -1
-            //     transform: scale(0, 0) rotate(-180deg)
+            box-shadow: none
+            z-index: 1
+            &::after, &::before
+                border-radius: 5px
+                transition: opacity 0.4s 
+                position: absolute
+                content: ''
+                display: block
+                left: 0
+                right: 0
+                top: 0
+                bottom: 0
+                width: 100%
+                height: 100%
+                opacity: 0
+                z-index: -1
+            &::after                
+                background: #EDAED7
+            &::before
+                background: #E4E7EB
             &:hover
-                background-position: 100% 0
+                &::after
+                    opacity: 1
+                // background-position: 100% 0
                 // &::after
                 //     transform: scale(1, 1) rotate(0deg)
+            &:active, &:focus, &:visited
+                color: #9AA5B1                
+                &::before
+                    opacity: 1
+                svg
+                    fill: #9AA5B1 
+                
             svg
                 width: 21px
                 height: 21px
@@ -254,7 +278,10 @@
                 position: relative
                 z-index: 1
                 fill: #fff
+                margin-right: 10px
+                
             span
+                
                 margin: auto
                 position: relative
                 z-index: 1
@@ -267,23 +294,23 @@ $var5: #000000
 #tabs 
 	margin: 10px 0
 
-.tabs-nav 
-	display: table
-	margin: 0
-	padding: 0
-	width: 100%
-	li 
-		display: table-cell
-		float: none
-		margin: 0
-		padding: 0
-		&:first-child a 
-			border-radius: 5px 0 0 0
+// .tabs-nav 
+// 	display: table
+// 	margin: 0
+// 	padding: 0
+// 	width: 100%
+// 	li 
+// 		display: table-cell
+// 		float: none
+// 		margin: 0
+// 		padding: 0
+// 		&:first-child a 
+// 			border-radius: 5px 0 0 0
 		
-		&:last-child a 
-			display: block
-			border-right: 1px solid $var1
-			border-radius: 0 5px 0 0
+// 		&:last-child a 
+// 			display: block
+// 			border-right: 1px solid $var1
+// 			border-radius: 0 5px 0 0
 		
 	
 	a 
@@ -301,21 +328,9 @@ $var5: #000000
 			border-bottom: 1px solid $var4
 			background: $var4
 			color: $var5
-		
-	
 
-// .tabs-items 
-// 	border: 1px solid $var1
-// 	border-top: none
-// 	border-radius: 0 0 5px 5px
-// 	background: $var4
-
-// .tabs-item 
-// 	padding: 15px
-
-// #map2
-//     width: 100%
-
+.tabs-item 
+	padding: 15px
 .map-popup 
     background: #ffffff
     // border-radius: 5px
@@ -331,12 +346,9 @@ $var5: #000000
         line-height: 15px
         display: block
         background-size: 18px 16px
-        
         background-position: 0 0
-        
-
-#map-1
-    // margin-top: 30px
+    
+#map-1, #map-2, #map-3, #map-4
     border-radius: 15px
 
 .map
@@ -344,13 +356,13 @@ $var5: #000000
         visibility: visible!important /* Оставляем иконку видимой при открытии попапа */
         display: inline!important
     &-adress
-        background: url("../../img/map-adress.svg") no-repeat center/cover
+        background: url("../img/map-adress.svg") no-repeat center/cover
     &-time
         margin-top: 18px
-        background: url("../../img/map-time.svg") no-repeat center/cover
+        background: url("../img/map-time.svg") no-repeat center/cover
     &-tel
         margin-top: 18px
-        background: url("../../img/map-tel.svg") no-repeat center/cover
+        background: url("../img/map-tel.svg") no-repeat center/cover
         
 
 .leaflet-popup-tip-container 
@@ -373,7 +385,9 @@ $var5: #000000
         line-height: 1.5
         color: #9BBABD
         display: inline-block
+
     &__item
+        text-decoration: none
         margin: 30px 30px 30px 0
         font-weight: 600
         font-size: 14px
@@ -409,10 +423,15 @@ $var5: #000000
     margin-top: 100px
     color: #FFFFFF
     padding-top: 59px
+    padding-bottom: 46px
     &__column
         display: inline-block
         vertical-align: top
-        margin-right: 54px
+        margin-right: 40px
+        margin-left: 15px
+        // display: inline-flex
+        // align-items: start
+        // flex-direction: column
 
     a
         color: #FFFFFF
@@ -484,6 +503,7 @@ $var5: #000000
         // height: 40px
         // padding: 13px 60px 13px 20px
         border: 1px solid #7B8794
+        background: #1F2933
         border-radius: 5px
         display: flex
         justify-content: space-between
@@ -501,8 +521,24 @@ $var5: #000000
             justify-content: center
             align-items: center
             cursor: pointer
-            &:hover
-                background: #5466eb
+            position: relative
+            z-index: 1
+            &::before
+                position: absolute
+                content: ''
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                background: #ADB3EA
+                opacity: 0
+                transition: opacity 0.6s
+                z-index: -1
+                
+            &:hover, &:active
+                &::before
+                    opacity: 1
+                // background: #ADB3EA
         input 
             border: none
             background: none
@@ -510,11 +546,15 @@ $var5: #000000
             height: 100%
             text-indent: 10px
             color: #fff
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
             &::placeholder
                 color: #7B8794
                 font-weight: normal
                 font-size: 14px
                 line-height: 21px
+                
         &__title
             // margin-top: 45px
             font-weight: 600
@@ -543,6 +583,18 @@ $var5: #000000
                 svg
                     max-width: 71px
                     max-height: 24px
+.subfooter
+    background: #52606D
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 60px
+    color: #fff
+    font-size: 14px
+    a
+        text-decoration: none
+        color: #fff
+
     
 
 

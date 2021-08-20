@@ -59,4 +59,3 @@ catalogBtnLists.forEach(item => {
         }
     })
 })
-
