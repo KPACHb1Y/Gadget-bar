@@ -11,9 +11,12 @@ const catalogBtn = document.querySelector('.catalog-btn')
 const catalogMenu = document.querySelector('.catalog-menu')
 const btnMenuCross = document.querySelector('.btn-menu-cross')
 const btnMenu = document.querySelector('.btn-menu')
-const catalogBtnLists = document.querySelectorAll('.catalog-menu ul li')
+const catalogBtnLists = document.querySelectorAll('.catalog-menu ul li a')
 const subCatalogMenu = document.querySelector('.sub-catalog-menu')
 
+const cartCounter = document.querySelector('.cart-counter')
+const cartDelete = document.querySelector('.cart-delete')
+const btnCart = document.querySelector('.btn-cart')
 
 function toggleActiveModal(modal) {
     return modal.classList.toggle('active');
@@ -34,28 +37,63 @@ callLink.addEventListener('click', () => {
     body.style.overflow = 'hidden'
 })
 
-catalogBtn.addEventListener('click', () => {
-    catalogMenu.classList.toggle('active')
+btnCart.addEventListener('click', () => {
+    if (cartCounter.style.display !== 'flex') {
+        cartCounter.style.display = 'flex'
+        btnCart.style.display = 'none'
+    }
+})
+
+cartDelete.addEventListener('click', () => {
+    if (cartCounter.style.display === 'flex') {
+        cartCounter.style.display = 'none'
+        btnCart.style.display = 'flex'
+    }
+})
+
+catalogBtn.addEventListener('click', (e) => {
+    catalogMenu.classList.add('active')
     btnMenuCross.classList.toggle('active')
     if (btnMenuCross.classList.contains('active')) {
         btnMenu.style.display = 'none'
     } else {
         btnMenu.style.display = 'flex'
+        catalogMenu.classList.remove('active')
     }
 })
 
-catalogBtnLists.forEach(item => {
-    item.addEventListener('mouseover', () => {
-        subCatalogMenu.classList.add('active')
+$(document).ready(function () {
+    $('.dropBtn').each(function () {
+        $(this).mouseover(function() {
+            $('.sub-catalog-menu').each(function() {
+                $(this).show()
+            });
+        }).mouseout(function() {
+            let t = setTimeout(function() {
+                $('.sub-catalog-menu').hide();
+            }, 100);
+            $('.sub-catalog-menu').on('mouseenter', function() {
+                $('.sub-catalog-menu').show();
+                clearTimeout(t);
+            }).on('mouseleave', function() {
+                $('.sub-catalog-menu').hide();
+            })
+        })
     })
+    // $('.dropBtn').mouseover(function() {
+    //     $('.sub-catalog-menu').show();
+    // }).mouseout(function() {
+    //     let t = setTimeout(function() {
+    //         $('.sub-catalog-menu').hide();
+    //     }, 100);
+    //
+    //     $('.sub-catalog-menu').on('mouseenter', function() {
+    //         $('.sub-catalog-menu').show();
+    //         clearTimeout(t);
+    //     }).on('mouseleave', function() {
+    //         $('.sub-catalog-menu').hide();
+    //     })
+    // })
 })
 
-catalogBtnLists.forEach(item => {
-    item.addEventListener('mouseout', () => {
-        if (item.classList.contains('active')) {
-            subCatalogMenu.classList.remove('active')
-        } else {
-            subCatalogMenu.classList.add('active')
-        }
-    })
-})
+
