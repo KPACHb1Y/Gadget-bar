@@ -11,7 +11,7 @@ const catalogBtn = document.querySelector('.catalog-btn')
 const catalogMenu = document.querySelector('.catalog-menu')
 const btnMenuCross = document.querySelector('.btn-menu-cross')
 const btnMenu = document.querySelector('.btn-menu')
-const catalogBtnLists = document.querySelectorAll('.catalog-menu ul li a')
+const dropEnd = document.querySelectorAll('.dropend')
 const subCatalogMenu = document.querySelector('.sub-catalog-menu')
 
 const cartCounter = document.querySelector('.cart-counter')
@@ -62,38 +62,32 @@ catalogBtn.addEventListener('click', (e) => {
     }
 })
 
-$(document).ready(function () {
-    $('.dropBtn').each(function () {
-        $(this).mouseover(function() {
-            $('.sub-catalog-menu').each(function() {
-                $(this).show()
-            });
-        }).mouseout(function() {
-            let t = setTimeout(function() {
-                $('.sub-catalog-menu').hide();
-            }, 100);
-            $('.sub-catalog-menu').on('mouseenter', function() {
-                $('.sub-catalog-menu').show();
-                clearTimeout(t);
-            }).on('mouseleave', function() {
-                $('.sub-catalog-menu').hide();
-            })
-        })
+dropEnd.forEach(item => {
+    item.addEventListener('click', e => {
+        e.stopPropagation();
     })
-    // $('.dropBtn').mouseover(function() {
-    //     $('.sub-catalog-menu').show();
-    // }).mouseout(function() {
-    //     let t = setTimeout(function() {
-    //         $('.sub-catalog-menu').hide();
-    //     }, 100);
-    //
-    //     $('.sub-catalog-menu').on('mouseenter', function() {
-    //         $('.sub-catalog-menu').show();
-    //         clearTimeout(t);
-    //     }).on('mouseleave', function() {
-    //         $('.sub-catalog-menu').hide();
-    //     })
-    // })
 })
+
+$(function() {
+    // при нажатии на кнопку scrollup
+    $('.scroll-up').on('click', function() {
+        // переместиться в верхнюю часть страницы
+        $("html, body").animate({
+            scrollTop:0
+        },500);
+    })
+})
+// при прокрутке окна (window)
+$(window).scroll(function() {
+    // если пользователь прокрутил страницу более чем на 200px
+    if ($(this).scrollTop()>200) {
+        // то сделать кнопку scrollup видимой
+        $('.scroll-up').css('display', 'flex');
+    }
+    // иначе скрыть кнопку scrollup
+    else {
+        $('.scroll-up').css('display', 'none');
+    }
+});
 
 
