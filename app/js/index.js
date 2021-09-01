@@ -14,8 +14,8 @@ const btnMenu = document.querySelector('.btn-menu')
 const fixedMenuBtn = document.querySelector('.fixed-menu')
 const catalogFixedMenu = document.querySelector('.catalog-fixed-menu')
 
-const dropEnd = document.querySelectorAll('.dropend')
-const subCatalogMenu = document.querySelector('.sub-catalog-menu')
+const dropBtn = document.querySelectorAll('.dropBtn')
+const subCatalogMenu = document.querySelectorAll('.sub-catalog-menu')
 
 const cartCounter = document.querySelector('.cart-counter')
 const cartDelete = document.querySelector('.cart-delete')
@@ -55,6 +55,23 @@ $(function() {
     $('.tabs-target').click(function () {
         $('#tabs .tabs-nav a[href=' + $(this).data('id') + ']').click();
     });
+
+    $('.dropBtn').on('click',function(e){
+        e.stopPropagation()
+        if($(this).next().hasClass('active')){
+            $(this).next().removeClass('active');
+        }
+        else{
+            $('.sub-catalog-menu').removeClass('active');
+            $(this).next().addClass('active');
+        }
+    });
+    $('.sub-catalog-menu').on('click', e => {
+        e.stopPropagation()
+    })
+    $('.catalog-menu').on('click', e => {
+        e.stopPropagation()
+    })
 })
 // при прокрутке окна (window)
 $(window).scroll(function() {
@@ -76,9 +93,9 @@ $(window).scroll(function() {
             'display': 'none',
             'margin' : '0'
         })
-        searchInput.css('margin-left', '32px')
+        // searchInput.css('margin-left', '32px')
     }
-    if ($(this).scrollTop()>200) {
+    if ($(this).scrollTop()>2600) {
         // то сделать кнопку scrollup видимой
         $('.scroll-up').css('display', 'flex');
     }
@@ -126,12 +143,12 @@ fixedMenuBtn.addEventListener('click', () => {
     } else {
         btnMenu.style.display = 'flex'
         catalogFixedMenu.classList.remove('active')
+        $('.sub-catalog-menu').removeClass('active')
     }
 })
 
 
-catalogBtn.addEventListener('click', () => {
-    console.log(true)
+catalogBtn.addEventListener('click', function() {
     catalogMenu.classList.add('active')
     btnMenuCross.classList.toggle('active')
     if (btnMenuCross.classList.contains('active')) {
@@ -139,98 +156,25 @@ catalogBtn.addEventListener('click', () => {
     } else {
         btnMenu.style.display = 'flex'
         catalogMenu.classList.remove('active')
+        $('.sub-catalog-menu').removeClass('active')
     }
 })
 
-// catalogBtn.forEach(item => {
-//     item.addEventListener('click', (e) => {
-//         catalogMenu.classList.add('active')
-//
-//         if (btnMenuCross.classList.contains('active')) {
-//             btnMenu.style.display = 'none'
-//         } else {
-//             btnMenu.style.display = 'flex'
-//             catalogMenu.classList.remove('active')
-//         }
+// dropBtn.forEach(item => {
+//     item.addEventListener('click', e => {
+//         e.stopPropagation();
+//         console.log(true)
+//         subCatalogMenu.forEach(item => {
+//             item.classList.toggle('active')
+//         })
 //     })
 // })
-
-dropEnd.forEach(item => {
-    item.addEventListener('click', e => {
-        e.stopPropagation();
-        const dropBtn = document.querySelector('.dropBtn')
-        if (!dropBtn.classList.contains('show')) {
-            subCatalogMenu.classList.add('show')
-        } else {
-            subCatalogMenu.classList.remove('show')
-        }
-    })
-})
 
 function notEmptyInput() {
     if (nameInput.length !== 0 && telInput.length !== 0) {
         sendForm.disabled = true
     }
 }
-
-const mySwiper = new Swiper(".mySwiper", {
-    slidesPerView: 6,
-    spaceBetween: 20,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            centeredSlides: true
-        },
-        480: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            centeredSlides: true
-        },
-        534: {
-            slidesPerView: 2,
-        },
-        767: {
-            slidesPerView: 3,
-            spaceBetween: 30
-        },
-        991: {
-            slidesPerView: 4,
-        },
-        1200: {
-            slidesPerView: 5,
-        }
-    }
-});
-
-const swiperMain = new Swiper('.swiper-main', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-    }
-})
-
-const swiperAddress = new Swiper('.address-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: false,
-})
 
 var map;
 DG.then(function () {
