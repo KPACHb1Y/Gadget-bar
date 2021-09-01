@@ -72,6 +72,13 @@ $(function() {
     $('.catalog-menu').on('click', e => {
         e.stopPropagation()
     })
+    $('.catalog-fixed-menu').on('click', e => {
+        e.stopPropagation()
+    })
+    $('.dropdown-toggle').on('click', () => {
+        $('.catalog-menu').removeClass('active')
+        $('.catalog-fixed-menu').removeClass('active')
+    })
 })
 // при прокрутке окна (window)
 $(window).scroll(function() {
