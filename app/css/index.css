@@ -1776,6 +1776,64 @@ img {
 .subfooter p {
     margin: 0 0 0 5px;
 }
+.fixed-menu {
+    display: none;
+}
+.catalog-fixed-menu {
+    top: 80px;
+    left: 275px;
+}
+
+
+@media (max-width: 1320px) {
+    .container {
+        width: 1294px;
+    }
+    .search-block__input input {
+        width: 653px;
+    }
+    .slider-block .slider-block__slide {
+        width: 815px;
+    }
+    .slider-block__slide .slider-image {
+        width: 425px;
+        top: 105px;
+    }
+    .header_fixed .search-block__input input {
+        width: 540px;
+    }
+    .slider-block__cart {
+        width: auto;
+        padding: 20px;
+    }
+    .slider-block__cart-product .popular-product {
+        margin-right: 145px;
+    }
+    .slider-block__cart-desc img {
+        margin-top: 44px;
+    }
+    .slider-block__cart-product {
+        margin-bottom: 35px;
+    }
+    .slider-block__cart-desc__list .name-product {
+        width: 177px;
+    }
+    .popular .item__basket {
+        width: 100%;
+        max-width: none;
+        padding: 0 70px;
+    }
+    .tabs-item {
+        padding: 0;
+    }
+    .footer-block {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .catalog-fixed-menu {
+        left: 195px;
+    }
+}
 
 @media (max-width: 1200px) {
   .install__block {
@@ -1798,6 +1856,46 @@ img {
   .adress__item {
     margin: 0;
   }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 1000px;
+    }
+    .contact-block .contact-block__time ul li {
+        margin-right: 17px;
+    }
+    .contact-block__garant ul li:first-child {
+        display: none;
+    }
+    .contact-block .contact-block__garant ul li {
+        margin-right: 0;
+        margin-left: 25px;
+    }
+    .search-block__input input {
+        width: 343px;
+    }
+    .navbar-block__menu {
+        margin-left: 0;
+    }
+    .navbar-block__menu .dropdown:nth-child(5) {
+        display: none;
+    }
+    .navbar-block__menu .dropdown:nth-child(6) {
+        display: none;
+    }
+    .category-block .category-block__box {
+        width: 180px;
+    }
+    .category-block .category-block__box:nth-child(3) {
+        display: none;
+    }
+    .popular .item__basket {
+        padding: 0 35px;
+    }
+    .tabs-item {
+        padding-top: 30px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -1884,6 +1982,15 @@ img {
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 736px;
+    }
+    .contact-block .contact-block__time ul li {
+        margin-right: 45px;
+    }
+    .contact-block .contact-block__time ul li:nth-child(5) {
+        margin-right: 0;
+    }
     .contact-block .contact-block__time ul li:last-child {
         display: none;
     }
@@ -1892,7 +1999,7 @@ img {
     }
 
     .search-block .search-block__input {
-        width: 261px;
+        width: 240px;
         margin-left: 15px;
     }
     .search-block .search-block__social-icons {
@@ -1972,6 +2079,9 @@ img {
     }
     .footer .subscribe__pay svg:last-child {
         margin-right: 0;
+    }
+    .scroll-up {
+        display: none !important;
     }
 }
 
@@ -2310,11 +2420,4 @@ img {
     background: #51777C !important;
     color: #ffffff !important;
     border-radius: 4px !important;
-}
-.fixed-menu {
-    display: none;
-}
-.catalog-fixed-menu {
-    top: 80px;
-    left: 275px;
 }

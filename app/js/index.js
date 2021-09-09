@@ -82,26 +82,29 @@ $(function() {
 })
 // при прокрутке окна (window)
 $(window).scroll(function() {
-    let header = $('.search-block');
-    let btnCatalog = $('.fixed-menu')
-    let searchInput = $('.search-block__input')
-    if($(this).scrollTop() > 100) {
-        header.addClass('header_fixed');
-        header.css('justify-content', 'center')
-        btnCatalog.css({
-            'display': 'flex',
-            'margin' : '0 15px'
-        })
-        searchInput.css('margin-left', '15px')
-    } else {
-        header.removeClass('header_fixed');
-        header.css('justify-content', 'start')
-        btnCatalog.css({
-            'display': 'none',
-            'margin' : '0'
-        })
-        // searchInput.css('margin-left', '32px')
+    if (document.documentElement.clientWidth >= 1320) {
+        let header = $('.search-block');
+        let btnCatalog = $('.fixed-menu')
+        let searchInput = $('.search-block__input')
+        if($(this).scrollTop() > 100) {
+            header.addClass('header_fixed');
+            header.css('justify-content', 'center')
+            btnCatalog.css({
+                'display': 'flex',
+                'margin' : '0 15px'
+            })
+            searchInput.css('margin-left', '15px')
+        } else {
+            header.removeClass('header_fixed');
+            header.css('justify-content', 'start')
+            btnCatalog.css({
+                'display': 'none',
+                'margin' : '0'
+            })
+            // searchInput.css('margin-left', '32px')
+        }
     }
+
     if ($(this).scrollTop()>2600) {
         // то сделать кнопку scrollup видимой
         $('.scroll-up').css('display', 'flex');
